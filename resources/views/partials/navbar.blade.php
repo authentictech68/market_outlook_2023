@@ -14,7 +14,7 @@
             <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Page</h6>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="../pages/admin-dashboard.html">
+            <a class="nav-link active" href="/">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
               </div>
@@ -22,7 +22,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../pages/admin-user-table.html">
+            <a class="nav-link" href="/userTable">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
               </div>
@@ -30,7 +30,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../pages/admin-documentation.html">
+            <a class="nav-link" href="/documentation">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-collection text-success text-sm opacity-10"></i>
               </div>
@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../pages/admin-material.html">
+            <a class="nav-link" href="/material">
               <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="ni ni-single-copy-04 text-warning text-sm opacity-10"></i>
               </div>

@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\UserTable;
+use App\Http\Controllers\Documentation;
+use App\Http\Controllers\Material;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,9 @@ use App\Http\Controllers\Dashboard;
 // });
 
 Route::get('/', [Dashboard::class, 'index']);
+
+Route::get('/userTable', [UserTable::class, 'index']);
+
+Route::get('/documentation', [Documentation::class, 'index']);
+
+Route::get('/material', [Material::class, 'index']);
