@@ -17,6 +17,12 @@
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/argon-dashboard.css?v=2.0.2" rel="stylesheet" />
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>
+      var APP_URL = {!! json_encode(url('/')) !!}
+    </script>
   </head>
   <body class="g-sidenav-show bg-gray-100">
 

@@ -17,11 +17,17 @@ use App\Http\Controllers\Material;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// Dashboard
 
 Route::get('/', [Dashboard::class, 'index']);
+
+Route::post('dashboard/store', [Dashboard::class, 'store']);
+
+Route::post('dashboard/update', [Dashboard::class, 'update']);
+
+Route::post('dashboard/delete', [Dashboard::class, 'delete']);
+
+Route::post('dashboard/get_rundown', [Dashboard::class, 'get_rundown']);
 
 Route::get('/userTable', [UserTable::class, 'index']);
 

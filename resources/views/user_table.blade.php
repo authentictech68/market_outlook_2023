@@ -1,4 +1,4 @@
-@extends('template.main');
+@extends('template.main')
 
     @section('container')
     <main class="main-content position-relative border-radius-lg">
