@@ -29,6 +29,10 @@ Route::post('dashboard/delete', [Dashboard::class, 'delete']);
 
 Route::post('dashboard/get_rundown', [Dashboard::class, 'get_rundown']);
 
+Route::post('dashboard/export_rundown', [Dashboard::class, 'exportRundown'])->name('export-rundown');
+
+
+
 Route::get('/userTable', [UserTable::class, 'index']);
 
 Route::get('/documentation', [Documentation::class, 'index']);

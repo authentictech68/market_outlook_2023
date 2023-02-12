@@ -76,13 +76,17 @@
                 <div class="card mb-3">
                   <div class="card-header pb-0 p-3">                    
                       <div class="d-flex justify-content-between">
-                        <div>
-                          <h6 class="mb-2">Rundown Day-1</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6 class="mb-2">Rundown Day-1</h6>
                         </div>
-                        <div>
-                          <button type="submit" class="btn bg-gradient-secondary text-xs mb-0 ml-4">Download Itinerary</button>
-                          <button type="submit" class="btn bg-gradient-dark text-xs mb-0 ml-4">Download Rundown</button>
-                          <button class="btn bg-gradient-dark text-xs mb-0 add-rundown mr-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-role="committee" data-day="1" data-type="General">Add</button>
+                        <div class="d-flex justify-content-center">
+                            {{-- <button type="submit" class="btn bg-gradient-secondary text-xs mb-0 ml-4">Download Itinerary</button> --}}
+                            <form action="{{ route('export-rundown') }}" method="post">
+                              {{ csrf_field() }}
+                              <input type="hidden" name="role" value="committee"/>
+                              <button type="submit" class="btn bg-gradient-dark text-xs mb-0 ml-4">Download Rundown</button>
+                            </form>
+                            <button class="btn bg-gradient-dark text-xs mb-0 add-rundown mr-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-role="committee" data-day="1" data-type="General">Add</button>
                         </div>
                       </div>
                   </div>
@@ -143,14 +147,18 @@
                 <div class="card mb-3">
                   <div class="card-header pb-0 p-3">
                     <div class="d-flex justify-content-between">
-                      <div>
+                      <div class="d-flex justify-content-center">
                         <h6 class="mb-2">Rundown Day-1</h6>
-                      </div>
-                      <div>
-                        <button type="submit" class="btn bg-gradient-secondary text-xs mb-0 ml-4">Download Itinerary</button>
-                            <button type="submit" class="btn bg-gradient-dark text-xs mb-0 ml-4">Download Rundown</button>
-                            <button class="btn bg-gradient-dark text-xs mb-0 add-rundown mr-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-role="participant" data-day="1" data-type="General">Add</button>
-                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        {{-- <button type="submit" class="btn bg-gradient-secondary text-xs mb-0 ml-4">Download Itinerary</button> --}}
+                        <form action="{{ route('export-rundown') }}" method="post">
+                          {{ csrf_field() }}
+                          <input type="hidden" name="role" value="participant"/>
+                          <button type="submit" class="btn bg-gradient-dark text-xs mb-0 ml-4">Download Rundown</button>
+                        </form>
+                        <button class="btn bg-gradient-dark text-xs mb-0 add-rundown mr-4" data-bs-toggle="modal" data-bs-target="#exampleModal" data-role="committee" data-day="1" data-type="General">Add</button>
+                    </div>
                     </div>
                   </div>
                   <div class="table-responsive">

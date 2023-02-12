@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ImportUser;
+use App\Exports\ExportUser;
+use App\Exports\ExportRundown;
 use App\Models\Rundown;
 use Exception;
 
@@ -111,5 +115,9 @@ class Dashboard extends Controller
                 'message'   => $err->getMessage()
             ], 500);
         }
+    }
+
+    public function exportRundown(Request $request){
+        return Excel::download(new ExportRundown($request), 'rundown.xlsx');
     }
 }
