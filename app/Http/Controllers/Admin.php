@@ -8,16 +8,17 @@ use App\Imports\ImportUser;
 use App\Exports\ExportUser;
 use App\Exports\ExportRundown;
 use App\Models\Rundown;
+use App\Models\User;
 use Exception;
 
-class Dashboard extends Controller
+class Admin extends Controller
 {
     public function index()
     {
         $rundownCommitteeDay1 = Rundown::where(['role' => 'committee', 'day' => '1'])->get();
         $rundownParticipantDay1 = Rundown::where(['role' => 'participant', 'day' => '1'])->get();
 
-        return view('dashboard', [
+        return view('admin/dashboard', [
             'title' => 'Dashboard',
             'rundownCommitteeDay1' => $rundownCommitteeDay1,
             'rundownParticipantDay1' => $rundownParticipantDay1
@@ -119,5 +120,12 @@ class Dashboard extends Controller
 
     public function exportRundown(Request $request){
         return Excel::download(new ExportRundown($request), 'rundown.xlsx');
+    }
+
+    public function userTable (){
+        $user = User::all();
+        return view('admin/user_table', [
+            'users' => $user
+        ]);
     }
 }

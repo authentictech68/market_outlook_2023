@@ -122,7 +122,7 @@
                               <td class="align-middle text-center text-sm">
                                 <div class="btn-group" role="group" aria-label="Basic example">
                                   <button class="btn btn-link text-primary text-xs mb-0 edit-rundown" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?= $rcd['id']; ?>">Edit</button>
-                                  <form action="/dashboard/delete" method="post">
+                                  <form action="/admin/delete" method="post">
                                       <?= csrf_field(); ?>
                                       <input type="hidden" name="id" value="<?= $rcd['id']; ?>" />
                                       <button type="submit" class="btn btn-link text-danger text-xs mb-0" onclick="confirm('Are you sure to delete agenda?')">Delete</button>
@@ -281,7 +281,7 @@
               console.log('add');
               $('.modal-title').html('Add Rundown');
               $('.modal-footer button[type=submit]').html('Insert');
-              $('.modal-content form').attr('action', APP_URL + '/dashboard/store')
+              $('.modal-content form').attr('action', APP_URL + '/admin/store')
 
               const role = $(this).data('role');
               console.log(role);
@@ -304,7 +304,7 @@
               console.log('edit');
               $('.modal-title').html('Edit Rundown');
               $('.modal-footer button[type=submit]').html('Update');
-              $('.modal-content form').attr('action', '/dashboard/update')
+              $('.modal-content form').attr('action', '/admin/update')
 
               const id = $(this).data('id');
               console.log(id);
@@ -313,7 +313,7 @@
                   headers: {
                       'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                   },
-                  url: "/dashboard/get_rundown",
+                  url: "/admin/get_rundown",
                   method: "POST",
                   data: {
                       id: id

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\Admin;
 use App\Http\Controllers\UserTable;
 use App\Http\Controllers\Documentation;
 use App\Http\Controllers\Material;
@@ -17,24 +17,24 @@ use App\Http\Controllers\Material;
 |
 */
 
-// Dashboard
+// Admin
 
-Route::get('/', [Dashboard::class, 'index']);
+Route::get('/', [Admin::class, 'index']);
 
-Route::post('dashboard/store', [Dashboard::class, 'store']);
+Route::post('admin/store', [Admin::class, 'store']);
 
-Route::post('dashboard/update', [Dashboard::class, 'update']);
+Route::post('admin/update', [Admin::class, 'update']);
 
-Route::post('dashboard/delete', [Dashboard::class, 'delete']);
+Route::post('admin/delete', [Admin::class, 'delete']);
 
-Route::post('dashboard/get_rundown', [Dashboard::class, 'get_rundown']);
+Route::post('admin/get_rundown', [Admin::class, 'get_rundown']);
 
-Route::post('dashboard/export_rundown', [Dashboard::class, 'exportRundown'])->name('export-rundown');
+Route::post('admin/export_rundown', [Admin::class, 'exportRundown'])->name('export-rundown');
 
-
-
-Route::get('/userTable', [UserTable::class, 'index']);
+Route::get('admin/userTable', [Admin::class, 'userTable']);
 
 Route::get('/documentation', [Documentation::class, 'index']);
 
 Route::get('/material', [Material::class, 'index']);
+
+// User
